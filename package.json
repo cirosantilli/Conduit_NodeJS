@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "back": "nodemon app.js",
+    "dev": "concurrently --kill-others 'npm run front --' 'npm run back --'",
+    "front": "cd react-redux-realworld-example-app && npm start",
+    "start": "app.js"
   },
   "repository": {
     "type": "git",
@@ -28,13 +31,13 @@
     "mysql2": "^2.2.5",
     "pg": "^8.5.1",
     "pg-hstore": "^2.3.3",
-    "sequelize": "^6.5.0",
-    "sqlite3": "^5.0.2"
+    "sequelize": "^6.5.0"
   },
   "engines": {
     "node": "12.19.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "sqlite3": "^5.0.2"
   }
 }
