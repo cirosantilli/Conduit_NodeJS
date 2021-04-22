@@ -16,6 +16,9 @@ const {Sequelize} = require('sequelize')
     port: 3306
 });
  */
+
+//SQLITE
+/*
 const sequelize = new Sequelize('d6rk5ijgmvcf6q',process.env.USER_NAME,process.env.PASSWORD,{
     dialect: 'postgres',
     host: process.env.DB_HOST,
@@ -27,6 +30,12 @@ const sequelize = new Sequelize('d6rk5ijgmvcf6q',process.env.USER_NAME,process.e
             rejectUnauthorized: false // <<<<<<< YOU NEED THIS
         }
     }
+});
+*/
+
+const sequelize = new Sequelize({
+  dialect: 'sqlite',
+  storage: 'db.sqlite3',
 });
 
 const checkConnection =async () => {
